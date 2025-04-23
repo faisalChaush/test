@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Professional Dashboard</title>
+  <style>
+    :root {
+      --primary-color: #4f46e5;
+      --secondary-color: #f9fafb;
+      --text-color: #111827;
+      --card-bg: #ffffff;
+      --sidebar-bg: #1f2937;
+      --sidebar-text: #d1d5db;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    body {
+      display: flex;
+      height: 100vh;
+      background-color: var(--secondary-color);
+      color: var(--text-color);
+    }
+
+    .sidebar {
+      width: 260px;
+      background-color: var(--sidebar-bg);
+      color: var(--sidebar-text);
+      padding: 30px 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+      box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+    }
+
+    .sidebar h2 {
+      color: white;
+      text-align: center;
+      font-size: 24px;
+      margin-bottom: 10px;
+    }
+
+    .nav-links {
+      list-style: none;
+    }
+
+    .nav-links li {
+      margin: 20px 0;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: var(--sidebar-text);
+      font-size: 16px;
+      display: block;
+      padding: 10px 15px;
+      border-radius: 8px;
+      transition: 0.3s;
+    }
+
+    .nav-links a:hover {
+      background-color: #374151;
+      color: white;
+      transform: translateX(5px);
+    }
+
+    .main {
+      flex: 1;
+      padding: 30px;
+      overflow-y: auto;
+    }
+
+    .header {
+      background-color: var(--primary-color);
+      color: white;
+      padding: 20px 30px;
+      font-size: 28px;
+      border-radius: 12px;
+      margin-bottom: 30px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      transition: 0.3s ease;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 20px;
+    }
+
+    .card {
+      background: var(--card-bg);
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    .card h3 {
+      font-size: 20px;
+      margin-bottom: 10px;
+    }
+
+    .card p {
+      font-size: 14px;
+      color: #6b7280;
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 768px) {
+      .sidebar {
+        display: none;
+      }
+
+      body {
+        flex-direction: column;
+      }
+
+      .main {
+        padding: 20px;
+      }
+
+      .header {
+        font-size: 22px;
+        padding: 15px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="sidebar">
+    <h2>Dashboard</h2>
+    <ul class="nav-links">
+      <li><a href="#">🏠 Overview</a></li>
+      <li><a href="#">📊 Analytics</a></li>
+      <li><a href="#">🧾 Reports</a></li>
+      <li><a href="#">⚙️ Settings</a></li>
+    </ul>
+  </div>
+
+  <div class="main">
+    <div class="header">Welcome back, Faisal 👋</div>
+    <div class="cards">
+      <div class="card">
+        <h3>Total Users</h3>
+        <p>1,234 active users this month</p>
+      </div>
+      <div class="card">
+        <h3>New Signups</h3>
+        <p>348 new accounts created</p>
+      </div>
+      <div class="card">
+        <h3>Revenue</h3>
+        <p>$12,340 earned in April</p>
+      </div>
+      <div class="card">
+        <h3>Performance</h3>
+        <p>97.5% uptime this week</p>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
+
